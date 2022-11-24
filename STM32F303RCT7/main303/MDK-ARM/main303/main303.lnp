@@ -1,0 +1,27 @@
+--cpu=Cortex-M4.fp.sp
+"main303\startup_stm32f303xc.o"
+"main303\main.o"
+"main303\stm32f3xx_it.o"
+"main303\stm32f3xx_hal_msp.o"
+"main303\brt_utc.o"
+"main303\stm32f3xx_hal_can.o"
+"main303\stm32f3xx_hal.o"
+"main303\stm32f3xx_hal_rcc.o"
+"main303\stm32f3xx_hal_rcc_ex.o"
+"main303\stm32f3xx_hal_gpio.o"
+"main303\stm32f3xx_hal_dma.o"
+"main303\stm32f3xx_hal_cortex.o"
+"main303\stm32f3xx_hal_pwr.o"
+"main303\stm32f3xx_hal_pwr_ex.o"
+"main303\stm32f3xx_hal_flash.o"
+"main303\stm32f3xx_hal_flash_ex.o"
+"main303\stm32f3xx_hal_i2c.o"
+"main303\stm32f3xx_hal_i2c_ex.o"
+"main303\stm32f3xx_hal_exti.o"
+"main303\stm32f3xx_hal_tim.o"
+"main303\stm32f3xx_hal_tim_ex.o"
+"main303\system_stm32f3xx.o"
+--strict --scatter "main303\main303.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "main303.map" -o main303\main303.axf
