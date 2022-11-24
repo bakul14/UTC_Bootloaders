@@ -13,19 +13,19 @@
 /*--------Table of identifiers--------
 Precharge				0x10
 Discharge				0x11
-VCU							0x12
-BCU							0x13
+VCU						0x12
+BCU						0x13
 AMS LV					0x14
-Brake Light			0x15
-CMUX Front			0x16
+Brake Light			    0x15
+CMUX Front			    0x16
 CMUX Rear				0x17
-AMI							0x18
-ASSI						0x19
-FAN Regulator		0x1A
-AMS Master			0x1B
-EBS							0x1C
-Steering Wheel	0x1D
-VCDU						0x1E
+AMI						0x18
+ASSI					0x19
+FAN Regulator		    0x1A
+AMS Master			    0x1B
+EBS						0x1C
+Steering Wheel	        0x1D
+VCDU					0x1E
 ----------Table of identifiers------*/
 
 
