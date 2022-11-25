@@ -30,9 +30,9 @@
 
 
 //-----------DEVELOPER SETTINGS (don't change)-----------
-#define APP_START_ADDRESS 0x08002400
-#define NUMBER_OF_PAGES 64
-#define FLAG_ADDRESS 0x0800FC00
+#define APP_START_ADDRESS 0x08002800
+#define NUMBER_OF_PAGES 128
+#define FLAG_ADDRESS 0x0803F800
 #define FLAG_VALUE 0x12345678
 //-----------DEVELOPER SETTINGS (don't change)-----------
 

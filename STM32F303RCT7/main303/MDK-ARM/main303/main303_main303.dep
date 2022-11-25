@@ -2,7 +2,7 @@ Dependencies for Project 'main303', Target 'main303': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
 F (startup_stm32f303xc.s)(0x637FF612)(--cpu Cortex-M4.fp.sp --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_main303-IC:\Users\bakul\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\bakul\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include--pd "__UVISION_VERSION SETA 536" --pd "_RTE_ SETA 1" --pd "STM32F303xC SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f303xc.lst --xref -o main303\startup_stm32f303xc.o --depend main303\startup_stm32f303xc.d)
 F (../Core/Src/main.c)(0x637FF6AE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_main303-IC:\Users\bakul\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\bakul\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F303xC -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F303xC-o main303\main.o --omf_browse main303\main.crf --depend main303\main.d)
-I (../Core/Inc/brt_utc.h)(0x637FF547)
+I (../Core/Inc/brt_utc.h)(0x63810A90)
 I (../Core/Inc/main.h)(0x637FF60E)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x637FF373)
 I (../Core/Inc/stm32f3xx_hal_conf.h)(0x637FF60E)
@@ -97,7 +97,7 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_i2c_ex.h)(0x637FF373)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_pwr.h)(0x637FF373)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_pwr_ex.h)(0x637FF373)
 F (..\Core\Src\brt_utc.c)(0x637FED96)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_main303-IC:\Users\bakul\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\bakul\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.2.2\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F303xC -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F303xC-o main303\brt_utc.o --omf_browse main303\brt_utc.crf --depend main303\brt_utc.d)
-I (../Core/Inc/brt_utc.h)(0x637FF547)
+I (../Core/Inc/brt_utc.h)(0x63810A90)
 I (../Core/Inc/main.h)(0x637FF60E)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x637FF373)
 I (../Core/Inc/stm32f3xx_hal_conf.h)(0x637FF60E)

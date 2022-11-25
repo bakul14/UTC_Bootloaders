@@ -4,7 +4,7 @@
 #endif
 
 //----------- USER SETTINGS-----------
-#define DEVICE_ID 0x12
+#define DEVICE_ID 0x10
 #define USED_CANBus hcan
 //----------- USER SETTINGS-----------
 
