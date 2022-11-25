@@ -8,12 +8,12 @@ const uint32_t flag_address = FLAG_ADDRESS;
 const uint32_t flag_value = FLAG_VALUE;
 uint32_t PageError = 0;
 
-uint32_t program_data_1 = 0;
-uint32_t program_data_2 = 0;
+volatile uint32_t program_data_1 = 0;
+volatile uint32_t program_data_2 = 0;
 uint64_t address_data = APP_START_ADDRESS;
 
-uint8_t FLAG_ERASE_OVER = 0;
-uint8_t FLAG_DOWNLOAD_OVER = 0;
+volatile uint8_t FLAG_ERASE_OVER = 0;
+volatile uint8_t FLAG_DOWNLOAD_OVER = 0;
 
 FLASH_EraseInitTypeDef pEraseInit;
 
@@ -30,7 +30,6 @@ void GoTo() //jump to the memory area specified in #define APP_START_ADDRESS
     appJumpAdress = *((volatile uint32_t*)(APP_START_ADDRESS+4));
 
     HAL_RCC_DeInit();
-    HAL_CAN_DeInit(&hcan);
     HAL_DeInit();
 
     void(*GoToApp)(void);
@@ -96,13 +95,13 @@ void CANBusStart(void)
     sFilterConfig.FilterScale = CAN_FILTERSCALE_16BIT;
     sFilterConfig.FilterActivation = ENABLE;
 
-    if (HAL_CAN_ConfigFilter(&hcan, &sFilterConfig)!= HAL_OK)
+    if (HAL_CAN_ConfigFilter(&USED_CANBus, &sFilterConfig)!= HAL_OK)
     {
         // Filter configuration Error
         Error_Handler();
     }
 
-    if(HAL_CAN_Start(&hcan)!= HAL_OK)
+    if(HAL_CAN_Start(&USED_CANBus)!= HAL_OK)
     {
         //Start Error
         Error_Handler();

@@ -1,9 +1,9 @@
 --cpu Cortex-M3
 "main103\startup_stm32f103xb.o"
+"main103\brt_utc.o"
 "main103\main.o"
 "main103\stm32f1xx_it.o"
 "main103\stm32f1xx_hal_msp.o"
-"main103\brt_utc.o"
 "main103\stm32f1xx_hal_gpio_ex.o"
 "main103\stm32f1xx_hal_can.o"
 "main103\stm32f1xx_hal.o"

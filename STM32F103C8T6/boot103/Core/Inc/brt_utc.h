@@ -4,28 +4,28 @@
 #endif
 
 //----------- USER SETTINGS-----------
-#define DEVICE_ID 0x10
+#define DEVICE_ID 0x12
 #define USED_CANBus hcan
 //----------- USER SETTINGS-----------
 
 
 
 /*--------Table of identifiers--------
-Precharge				0x10
-Discharge				0x11
-VCU						0x12
-BCU						0x13
-AMS LV					0x14
-Brake Light			    0x15
-CMUX Front			    0x16
-CMUX Rear				0x17
-AMI						0x18
-ASSI					0x19
-FAN Regulator		    0x1A
-AMS Master			    0x1B
-EBS						0x1C
-Steering Wheel	        0x1D
-VCDU					0x1E
+0x10	Precharge
+0x11	Discharge
+0x12	VCU
+0x13	BCU
+0x14	AMS LV
+0x15	Brake Light
+0x16	CMUX Front
+0x17	CMUX Rear
+0x18	AMI
+0x19	ASSI
+0x1A	FAN Regulator
+0x1B	AMS Master
+0x1C	EBS
+0x1D	Steering Wheel
+0x1E	VCDU
 ----------Table of identifiers------*/
 
 
@@ -44,12 +44,12 @@ extern const uint32_t flag_address;
 extern const uint32_t flag_value;
 extern uint32_t PageError;
 
-extern uint32_t program_data_1;
-extern uint32_t program_data_2;
+extern volatile uint32_t program_data_1;
+extern volatile uint32_t program_data_2;
 extern uint64_t address_data;
 
-extern uint8_t FLAG_ERASE_OVER;
-extern uint8_t FLAG_DOWNLOAD_OVER;
+extern volatile uint8_t FLAG_ERASE_OVER;
+extern volatile uint8_t FLAG_DOWNLOAD_OVER;
 
 extern CAN_HandleTypeDef USED_CANBus;
 
