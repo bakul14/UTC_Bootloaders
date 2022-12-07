@@ -89,7 +89,6 @@ int main(void)
     MX_GPIO_Init();
     MX_CAN_Init();
     /* USER CODE BEGIN 2 */
-		HAL_Delay(2000);
     /* USER CODE END 2 */
 
     /* Infinite loop */
@@ -176,7 +175,7 @@ static void MX_CAN_Init(void)
         Error_Handler();
     }
     /* USER CODE BEGIN CAN_Init 2 */
-CANBusStart();
+    CANBusStart();
     /* USER CODE END CAN_Init 2 */
 
 }
@@ -214,7 +213,11 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 
     if (pRxHeader.StdId == DEVICE_ID)
     {
-        if (RX_data[0] == 'S' && RX_data[1] == 'T' && RX_data[2] == 'A' && RX_data[3] == 'R' && RX_data[4] == 'T')
+        if (RX_data[0] == 'S' && 
+					RX_data[1] == 'T' &&
+				RX_data[2] == 'A' && 
+				RX_data[3] == 'R' && 
+				RX_data[4] == 'T')
         {
             StartUpdate();
         }

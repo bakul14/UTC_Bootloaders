@@ -4,7 +4,7 @@
 #endif
 
 //----------- USER SETTINGS-----------
-#define DEVICE_ID 0x12
+#define DEVICE_ID 0x10
 #define USED_CANBus hcan
 //----------- USER SETTINGS-----------
 
@@ -30,13 +30,13 @@
 
 
 //-----------DEVELOPER SETTINGS (don't change)-----------
-#define APP_START_ADDRESS 0x08002800
-#define NUMBER_OF_PAGES 128
-#define FLAG_ADDRESS 0x0803F800
+#define APP_START_ADDRESS 0x08002400
+#define NUMBER_OF_PAGES 64
+#define FLAG_ADDRESS 0x0800FC00
 #define FLAG_VALUE 0x12345678
 //-----------DEVELOPER SETTINGS (don't change)-----------
 
-
+extern uint8_t DeviceON[];
 extern uint8_t FeedbackBuf[1];
 extern uint8_t RX_data[8];
 

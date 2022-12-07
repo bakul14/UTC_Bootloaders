@@ -213,7 +213,11 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 
     if (pRxHeader.StdId == DEVICE_ID)
     {
-        if (RX_data[0] == 'S' && RX_data[1] == 'T' && RX_data[2] == 'A' && RX_data[3] == 'R' && RX_data[4] == 'T')
+        if (RX_data[0] == 'S' &&
+                RX_data[1] == 'T' &&
+                RX_data[2] == 'A' &&
+                RX_data[3] == 'R' &&
+                RX_data[4] == 'T')
         {
             StartUpdate();
         }

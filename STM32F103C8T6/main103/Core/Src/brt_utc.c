@@ -1,5 +1,6 @@
 #include "brt_utc.h"
 
+uint8_t DeviceON[] = "ON";
 uint8_t FeedbackBuf[1] = {'F'};
 uint8_t ReadyTX[] = "READY";
 uint8_t RX_data[8];
@@ -42,6 +43,8 @@ void GoTo() //jump to the memory area specified in #define APP_START_ADDRESS
 
 void CheckUpdate(void)
 {
+    HAL_CAN_AddTxMessage(&USED_CANBus, &pTxHeader, DeviceON, &TxMailbox);
+    HAL_Delay(100);
     HAL_FLASH_Unlock();
     if (*(__IO  uint32_t*)flag_address == flag_value)
     {
@@ -123,23 +126,37 @@ void ChangeVectorTable(void)
 
 inline void CANProcessing()
 {
-    if (RX_data[0] == 'E' && RX_data[1] == 'N' && RX_data[2] == 'D')
+    if (RX_data[0] == 'E' &&
+            RX_data[1] == 'N' &&
+            RX_data[2] == 'D')
     {
         HAL_FLASH_Lock();
         FLAG_DOWNLOAD_OVER = 1;
     }
+	
+    else if (RX_data[0] == 'S' &&
+             RX_data[1] == 'T' &&
+             RX_data[2] == 'A' &&
+             RX_data[3] == 'R' &&
+             RX_data[4] == 'T')
+    {
+        StartUpdate();
+    }
 
-    program_data_1 = (RX_data[0]) + (RX_data[1] << 8) + (RX_data[2] << 16) + (RX_data[3] << 24);
-    program_data_2 = (RX_data[4]) + (RX_data[5] << 8) + (RX_data[6] << 16) + (RX_data[7] << 24);
-    HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, address_data, program_data_1);
-    address_data += 4;
-    program_data_1 = 0;
-    HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, address_data, program_data_2);
-    address_data += 4;
-    program_data_2 = 0;
+    else
+    {
+        program_data_1 = (RX_data[0]) + (RX_data[1] << 8) + (RX_data[2] << 16) + (RX_data[3] << 24);
+        program_data_2 = (RX_data[4]) + (RX_data[5] << 8) + (RX_data[6] << 16) + (RX_data[7] << 24);
+        HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, address_data, program_data_1);
+        address_data += 4;
+        program_data_1 = 0;
+        HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, address_data, program_data_2);
+        address_data += 4;
+        program_data_2 = 0;
 
-    pTxHeader.DLC = 1;
-    HAL_CAN_AddTxMessage(&USED_CANBus, &pTxHeader, FeedbackBuf, &TxMailbox);
+        pTxHeader.DLC = 1;
+        HAL_CAN_AddTxMessage(&USED_CANBus, &pTxHeader, FeedbackBuf, &TxMailbox);
+    }
 }
 
 inline void StartUpdate(void)

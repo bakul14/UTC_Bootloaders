@@ -4,8 +4,8 @@
 #endif
 
 //----------- USER SETTINGS-----------
-#define DEVICE_ID 0x1B
-#define USED_CANBus hcan1
+#define DEVICE_ID 0x10
+#define USED_CANBus hcan
 //----------- USER SETTINGS-----------
 
 
@@ -30,13 +30,13 @@
 
 
 //-----------DEVELOPER SETTINGS (don't change)-----------
-#define APP_START_ADDRESS 0x08002800
-#define NUMBER_OF_PAGES 128
-#define FLAG_ADDRESS 0x0803F800
+#define APP_START_ADDRESS 0x08002400
+#define NUMBER_OF_PAGES 64
+#define FLAG_ADDRESS 0x0800FC00
 #define FLAG_VALUE 0x12345678
 //-----------DEVELOPER SETTINGS (don't change)-----------
 
-
+extern uint8_t DeviceON[];
 extern uint8_t FeedbackBuf[1];
 extern uint8_t RX_data[8];
 
@@ -44,12 +44,12 @@ extern const uint32_t flag_address;
 extern const uint32_t flag_value;
 extern uint32_t PageError;
 
-extern uint32_t program_data_1;
-extern uint32_t program_data_2;
+extern volatile uint32_t program_data_1;
+extern volatile uint32_t program_data_2;
 extern uint64_t address_data;
 
-extern uint8_t FLAG_ERASE_OVER;
-extern uint8_t FLAG_DOWNLOAD_OVER;
+extern volatile uint8_t FLAG_ERASE_OVER;
+extern volatile uint8_t FLAG_DOWNLOAD_OVER;
 
 extern CAN_HandleTypeDef USED_CANBus;
 

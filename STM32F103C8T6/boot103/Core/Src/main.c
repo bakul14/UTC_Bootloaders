@@ -63,7 +63,6 @@ static void MX_CAN_Init(void);
 int main(void)
 {
     /* USER CODE BEGIN 1 */
-    CheckUpdate();
     /* USER CODE END 1 */
 
     /* MCU Configuration--------------------------------------------------------*/
@@ -85,8 +84,8 @@ int main(void)
     /* Initialize all configured peripherals */
     MX_GPIO_Init();
     MX_CAN_Init();
-    /* USER CODE BEGIN 2 */
-
+    /* USER CODE BEGIN 2 */ 
+    CheckUpdate();
     /* USER CODE END 2 */
 
     /* Infinite loop */
@@ -172,7 +171,7 @@ static void MX_CAN_Init(void)
         Error_Handler();
     }
     /* USER CODE BEGIN CAN_Init 2 */
-		CANBusStart();
+    CANBusStart();
     /* USER CODE END CAN_Init 2 */
 
 }
@@ -195,7 +194,7 @@ static void MX_GPIO_Init(void)
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 {
     HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &pRxHeader, RX_data);
-		CANProcessing();
+    CANProcessing();
 }
 /* USER CODE END 4 */
 

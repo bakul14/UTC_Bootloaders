@@ -36,7 +36,7 @@
 #define FLAG_VALUE 0x12345678
 //-----------DEVELOPER SETTINGS (don't change)-----------
 
-
+extern uint8_t DeviceON[];
 extern uint8_t FeedbackBuf[1];
 extern uint8_t RX_data[8];
 
