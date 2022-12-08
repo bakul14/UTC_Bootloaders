@@ -1,6 +1,5 @@
 #include "brt_utc.h"
 
-uint8_t DeviceON[] = "ON";
 uint8_t FeedbackBuf[1] = {'F'};
 uint8_t ReadyTX[] = "READY";
 uint8_t RX_data[8];
@@ -43,8 +42,6 @@ void GoTo() //jump to the memory area specified in #define APP_START_ADDRESS
 
 void CheckUpdate(void)
 {
-    HAL_CAN_AddTxMessage(&USED_CANBus, &pTxHeader, DeviceON, &TxMailbox);
-    HAL_Delay(100);
     HAL_FLASH_Unlock();
     if (*(__IO  uint32_t*)flag_address == flag_value)
     {

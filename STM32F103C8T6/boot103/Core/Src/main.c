@@ -63,6 +63,7 @@ static void MX_CAN_Init(void);
 int main(void)
 {
     /* USER CODE BEGIN 1 */
+    CheckUpdate();
     /* USER CODE END 1 */
 
     /* MCU Configuration--------------------------------------------------------*/
@@ -85,7 +86,6 @@ int main(void)
     MX_GPIO_Init();
     MX_CAN_Init();
     /* USER CODE BEGIN 2 */ 
-    CheckUpdate();
     /* USER CODE END 2 */
 
     /* Infinite loop */
