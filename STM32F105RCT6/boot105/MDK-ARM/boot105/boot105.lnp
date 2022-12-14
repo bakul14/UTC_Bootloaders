@@ -1,9 +1,9 @@
 --cpu Cortex-M3
 "boot105\startup_stm32f105xc.o"
+"boot105\brt_utc.o"
 "boot105\main.o"
 "boot105\stm32f1xx_it.o"
 "boot105\stm32f1xx_hal_msp.o"
-"boot105\brt_utc.o"
 "boot105\stm32f1xx_hal_gpio_ex.o"
 "boot105\stm32f1xx_hal_can.o"
 "boot105\stm32f1xx_hal.o"
